@@ -16,7 +16,7 @@ body{
     font-family: Hanken;
 }
 .principale{
-    width:60%;
+    width:35%;
     height: 45%;
     position: relative;
     left:50%;
@@ -83,8 +83,63 @@ body{
 
 
 .summary{
-    background-color: hsl(0, 0%, 100%);
-    border-bottom-right-radius: 1em;
+    
+    border-bottom-right-radius: 2em;
     box-shadow: .9em .9em 1em hsla(241, 100%, 89%, 0.199);
     
+  
+}
+.summary > div{
+    margin-left: 1em;
+    margin-top: .7em;
+    width:80%;
+    height: 10%;
+    display: flex;
+    
+    align-items: center;
+    
+}
+.summary h1 {
+    margin:1em;
+}
+.summary > div{
+    border-radius: .6em;
+   
+}
+.reaction{
+    background-color: hsla(0, 100%, 67%, 0.100);
+    color: #F55;
+    
+    display: flex;
+    justify-content: space-between;
+}
+.summary > div > div {
+    display: flex;
+    
+    width:100%;
+    margin-left: .8em;
+    margin-right: .8em;
+    right: 0;
+}
+.summary > div > div:nth-child(1) span {
+    margin-left: .5em;
+    
+}
+.summary > div > div:nth-child(2) {
+   color:black;
+   display: flex;
+   justify-content: flex-end;
+}
+
+.memory{
+    background-color: hsla(39, 100%, 56%, 0.100);
+    color: #FFB21E;
+}
+.verbal{
+    background-color: hsla(166, 100%, 37% ,0.100);
+    color: #00BB8F;
+}
+.visual{
+    background-color: hsla(234, 85%, 45%, 0.100);
+    color: #1125D6;
 }
