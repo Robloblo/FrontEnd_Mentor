@@ -1,0 +1,237 @@
+
+.attribution a { color: hsl(228, 45%, 44%); }
+.attribution{
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left:50%;
+    transform: translateX(-50%);
+}
+@font-face {
+    font-family: "Hanken";
+    src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+
+/*Cette partie est pour la partie résultats*/
+body{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Hanken;
+}
+.principale{
+    width:40em;
+    height: 30em;
+    position: relative;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    background-color: rgba(255, 255, 255,1);
+    border-radius: 2em ;
+    box-shadow: 0 .9em 1em hsla(241, 100%, 89%, 0.918);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.principale > section {
+    width:50%;
+    height: 100%;
+}
+.result{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient( hsl(252,100%,67%), hsl(241,81%,54%));
+    border-radius: 2em;
+    
+}
+.result h1{
+    color: hsl(241, 100%, 89%);
+}
+.result h2{
+    color: white;
+}
+.result > p {
+    width: 65%;
+    text-align: justify;
+    text-align: center ;
+    color:hsl(224, 30%, 67%);
+    font-family: Hanken;
+}
+
+.result > div{
+    background: linear-gradient( hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+    border-radius: 100%;
+    aspect-ratio: 1 / 1;
+    width:50%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.score{
+    color: white;
+    font-size:2.5em;
+}
+.hundred{
+    color: hsl(241, 43%, 73%);
+    font-size: 1em;
+}
+
+
+
+.summary{
+    height: 100%;
+    border-bottom-right-radius: 2em;
+    box-shadow: .9em .9em 1em hsla(241, 100%, 89%, 0.199);
+}
+
+.summary > div:nth-child(1){
+    height:10%;
+}
+.summary > div:nth-child(2){
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.summary > div:nth-child(2) > div{
+    
+    margin-top: .8em;
+   
+    height: 20%;
+    width:90%;
+    display: flex;
+    
+    align-items: center;
+    
+}
+.summary div h1 {
+    margin:.6em;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: .7em ;
+}
+
+.reaction{
+    background-color: hsla(0, 100%, 67%, 0.100);
+    color: #F55;
+    
+    display: flex;
+    justify-content: space-between;
+}
+.summary > div > div >div{
+    display: flex;
+    
+    width:100%;
+    margin-left: .8em;
+    margin-right: .8em;
+    right: 0;
+    
+}
+.summary > div > div > div:nth-child(1) span {
+    margin-left: .5em;
+    
+}
+.summary > div >div> div:nth-child(2) {
+   color:black;
+   display: flex;
+   justify-content: flex-end;
+   
+}
+
+.memory{
+    background-color: hsla(39, 100%, 56%, 0.100);
+    color: #FFB21E;
+    
+}
+.verbal{
+    background-color: hsla(166, 100%, 37% ,0.100);
+    color: #00BB8F;
+}
+.visual{
+    
+    color: #1125D6;
+    
+
+    
+    background-color: hsla(234, 85%, 45%, 0.100);
+}
+
+
+.summary > div:nth-child(2) > div{
+    border-radius: .6em;
+    box-shadow:
+    -1px -1px 0 -1px rgb(133, 133, 133),
+     1px -1px 0 -1px rgb(133, 133, 133),
+    -1px  1px 0 -1px rgb(133, 133, 133),
+     1px  1px 0 -1px rgb(133, 133, 133);
+}
+.summary > div:nth-child(3){
+    height:30%;
+    
+    
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenair_continue{
+    
+    
+    background-color: hsl(224, 30%, 27%);
+    margin-left: 1em;
+    margin-right: 1em;
+    height: 3em;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+}
+.continue{
+    color: white;
+    
+}
+.contenair_continue:hover{
+    background: linear-gradient( hsl(252,100%,67%), hsl(241,81%,54%));
+    cursor:grab;
+}
+
+
+@media screen and (max-width: 550px) {
+    body{
+        
+        width:100%;
+        height:100vh;
+        
+    }
+    .principale{
+        flex-direction: column;
+        transform: translate(0,0);
+        height: 100vh;
+        left:0;
+        top:0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .principale > section {
+        width:100%;
+        border-radius:0;
+        border-bottom-left-radius: 2em;
+        border-bottom-right-radius: 2em;
+    }
+    
+}
