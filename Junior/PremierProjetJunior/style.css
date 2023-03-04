@@ -1,3 +1,14 @@
+@font-face {
+    font-family: test;
+    src: url(fonts/SpaceGrotesk-Regular.ttf);
+}
+
+@font-face {
+    font-family: test-bold;
+    src: url(fonts/SpaceGrotesk-Bold.ttf);
+}
+
+
 .attribution { 
     font-size: 11px;
     text-align: center;
@@ -11,6 +22,7 @@
 
 body{
     overflow: hidden;
+    font-family: test;
 }
 
 main{
@@ -146,19 +158,23 @@ main{
 .formulaire{
     position: absolute;
     top:50%;
-    right:15%;
+    right:0;
+    margin-right: 10%;
     transform: translate(0,-50%);
     max-width:30vmax;
-    height:22vmax;
+    height:40%;
     
     
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-direction: column;
-  
-    
-    
-    
+   
+}
+.formulaire form {
+    height:70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .formulaire > form  div > input{
     height: 2.4em;
@@ -172,18 +188,28 @@ main{
     color: gray;
     opacity: 0.7;
     margin-left: 1em;
+    
 }
-
+.formulaire form label{
+    font-family: test-bold;
+    font-weight: 700;
+    font-size: .9em;
+    width: 100%;
+}
 
 
 .form-date{display: flex;justify-content: center;}
 .form-date > div{
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-wrap: wrap;
 }
 .form-date > div > div {
-    width:40%;
+    width:45%;
+    font-size:1em;
+}
+.form-date > div:nth-child(2) > div {
+    width:100%;
     font-size:1em;
 }
 .form-date > div input {
@@ -192,6 +218,7 @@ main{
 }
 .form-name > input, .form-num > input {
     width:95%;
+    height:40%;
     font-size:1em;
 }
 
@@ -200,6 +227,13 @@ button{
     border-radius: .6em;
     background-color: hsl(278, 68%, 11%);
     color: white;
+}
+button:active{
+    
+    background-color: hsl(278, 65%, 21%);
+    box-shadow: inset 4px 4px 0.5em rgba(255, 255, 255, 0.307);
+    color: white;
+    transform: translate(0%,2%);
 }
 
 
@@ -218,7 +252,7 @@ button{
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     main{
         flex-direction: column;
     }
@@ -236,9 +270,33 @@ button{
     .visible{
         
         flex-direction: column;
-        background-color: red;
+        
     }
-   
+    .formulaire{
+        position:none   ;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        margin:0 ;
+        max-width: none;
+        width:90%;
+        height:60%;
+        
+        
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+      
+        
+        
+        
+    }
+    .formulaire form {
+        height:60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
 
     .card-front, .card-back{
     
