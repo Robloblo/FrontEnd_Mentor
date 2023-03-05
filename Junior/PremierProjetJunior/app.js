@@ -9,10 +9,10 @@ let input5 = liste[4];
 var chiffre_stock = "";
 
 const cart = "0000 0000 0000 0000";
-const nom = "------------------------------";
+
 const secret = "XXX";
 
-input1.addEventListener("input",function(event){handleReponse(event,".form-name > input",".card-front-info p:nth-child(1)",nom);}); //La partie nom
+input1.addEventListener("input",function(event){handleReponse(event,".form-name > input",".card-front-info p:nth-child(1)");}); //La partie nom
 input2.addEventListener("input",function(event){handleReponse(event,".form-num > input",".card-front-num p", cart);}); //la partie des 16 chiffres
 input3.addEventListener("input",function(event){handleReponse(event,".input-mois > input",".mois");});  // Les mois
 input4.addEventListener("input",function(event){handleReponse(event,".input-annee > input",".annee");}); // Les années
@@ -104,8 +104,10 @@ let numInput = document.querySelector(".form-num > input");
 numInput.addEventListener('input', function(event) {
     if (!numInput.checkValidity()) {
       monSpanNum.style.display = 'inline-block';
+      numInput.style.border = "solid thin red";
     } else {
       monSpanNum.style.display = 'none';
+      numInput.style.border = "solid thin black";
     }
   });
 
@@ -116,8 +118,10 @@ let moisInput = document.querySelector(".input-mois > input");
 moisInput.addEventListener('input', function(event) {
     if (!moisInput.checkValidity()) {
         monSpanMois.style.display = 'inline-block';
+        moisInput.style.border = "solid thin red";
     } else {
         monSpanMois.style.display = 'none';
+        moisInput.style.border = "solid thin black";
     }
 });
 
@@ -127,8 +131,10 @@ let anneeInput = document.querySelector(".input-annee > input");
 anneeInput.addEventListener('input', function(event) {
     if (!anneeInput.checkValidity()) {
         monSpanAnnee.style.display = 'inline-block';
+        anneeInput.style.border = "solid thin red";
     } else {
         monSpanAnnee.style.display = 'none';
+        anneeInput.style.border = "solid thin black";
     }
 });
 
@@ -138,8 +144,10 @@ let nomInput = document.querySelector(".form-name > input");
 nomInput.addEventListener('input', function(event) {
     if (!nomInput.checkValidity()) {
         monSpanNom.style.display = 'inline-block';
+        nomInput.style.border = "solid thin red";
     } else {
         monSpanNom.style.display = 'none';
+        nomInput.style.border = "solid thin black";
     }
 });
 
@@ -149,8 +157,10 @@ let codesecretInput = document.querySelector(".num-secret > input");
 codesecretInput.addEventListener('input', function(event) {
     if (!codesecretInput.checkValidity()) {
         monSpanCodesecret.style.display = 'inline-block';
+        codesecretInput.style.border = "solid thin red";
     } else {
         monSpanCodesecret.style.display = 'none';
+        codesecretInput.style.border = "solid thin black";
     }
 });
 
@@ -166,7 +176,15 @@ let partieCacher = document.querySelector(".cacher");
 formulaire.addEventListener("submit", function(e){
     e.preventDefault();
     partieVisible.classList ="cacher";
-    partieCacher.classList ="visible";
-    alert("ça vien de changer");
+    partieCacher.classList ="partiDeux";
+    
 
+})
+
+
+let boutonRetour = document.querySelector(".right-part > div:nth-child(2) > button");
+
+boutonRetour.addEventListener("click", function(){
+    partieVisible.classList ="formulaire";
+    partieCacher.classList ="cacher";
 })
