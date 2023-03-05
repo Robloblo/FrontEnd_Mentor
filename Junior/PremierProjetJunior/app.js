@@ -10,25 +10,15 @@ var chiffre_stock = "";
 
 const cart = "0000 0000 0000 0000";
 const nom = "------------------------------";
-const secret = "000";
+const secret = "XXX";
 
-input1.addEventListener("input",function(event){
-    handleReponse(event,".form-name > input",".card-front-info p:nth-child(1)",nom);
-});
-input2.addEventListener("input",function(event){
-    handleReponse(event,".form-num > input",".card-front-num p", cart);
-});
-input3.addEventListener("input",function(event){
-    handleReponse(event,".form-name > input",".card-front-info p:nth-child(2)");
-});
-input4.addEventListener("input",function(event){
-    handleReponse(event,".form-date >div:nth-child(2) > div > input",".texte-card-back p");
-});
-input5.addEventListener("input",function(event){
-    handleReponse(event,".num-secret > input",".texte-card-back p",secret);
-});
+input1.addEventListener("input",function(event){handleReponse(event,".form-name > input",".card-front-info p:nth-child(1)",nom);}); //La partie nom
+input2.addEventListener("input",function(event){handleReponse(event,".form-num > input",".card-front-num p", cart);}); //la partie des 16 chiffres
+input3.addEventListener("input",function(event){handleReponse(event,".input-mois > input",".mois");});  // Les mois
+input4.addEventListener("input",function(event){handleReponse(event,".input-annee > input",".annee");}); // Les années
+input5.addEventListener("input",function(event){handleReponse(event,".num-secret > input",".texte-card-back p",secret);}); //le code secret de 3 chiffres.
 
-console.log(liste);
+
 function handleReponse(event,debut,arriver,la_constante){
     let nouvelle_valeur = "";
         let chiffre = document.querySelector(debut);
@@ -59,6 +49,8 @@ function handleReponse(event,debut,arriver,la_constante){
         
         let chiffre_carte = document.querySelector(arriver);
         let chiffre = document.querySelector(debut);
+        
+
         chiffre_stock += chiffre.value.charAt(chiffre.value.length - 1);
         
         if((chiffre.getAttribute("class")).length % 4 == 0){
@@ -67,7 +59,7 @@ function handleReponse(event,debut,arriver,la_constante){
         chiffre_carte.innerHTML = chiffre.value;
         let nouvelle_valeur = "";
         chiffre_stock = document.querySelector(debut).value;
-        console.log(la_constante)
+        
         for(let i = 0; i < 16; i++){
             if(i < chiffre_stock.length){
                 if(i%4 == 0 && i != 0){
@@ -103,3 +95,78 @@ function handleReponse(event,debut,arriver,la_constante){
 
 
 
+
+
+//Partie qui vérifie affiche le message d'erreur rouge .
+let monSpanNum = document.querySelector(".form-num > span");
+let numInput = document.querySelector(".form-num > input");
+
+numInput.addEventListener('input', function(event) {
+    if (!numInput.checkValidity()) {
+      monSpanNum.style.display = 'inline-block';
+    } else {
+      monSpanNum.style.display = 'none';
+    }
+  });
+
+
+let monSpanMois = document.querySelector(".input-mois > span");
+let moisInput = document.querySelector(".input-mois > input");
+
+moisInput.addEventListener('input', function(event) {
+    if (!moisInput.checkValidity()) {
+        monSpanMois.style.display = 'inline-block';
+    } else {
+        monSpanMois.style.display = 'none';
+    }
+});
+
+let monSpanAnnee = document.querySelector(".input-annee > span");
+let anneeInput = document.querySelector(".input-annee > input");
+
+anneeInput.addEventListener('input', function(event) {
+    if (!anneeInput.checkValidity()) {
+        monSpanAnnee.style.display = 'inline-block';
+    } else {
+        monSpanAnnee.style.display = 'none';
+    }
+});
+
+let monSpanNom = document.querySelector(".form-name > span");
+let nomInput = document.querySelector(".form-name > input");
+
+nomInput.addEventListener('input', function(event) {
+    if (!nomInput.checkValidity()) {
+        monSpanNom.style.display = 'inline-block';
+    } else {
+        monSpanNom.style.display = 'none';
+    }
+});
+
+let monSpanCodesecret = document.querySelector(".num-secret > span");
+let codesecretInput = document.querySelector(".num-secret > input");
+
+codesecretInput.addEventListener('input', function(event) {
+    if (!codesecretInput.checkValidity()) {
+        monSpanCodesecret.style.display = 'inline-block';
+    } else {
+        monSpanCodesecret.style.display = 'none';
+    }
+});
+
+
+
+//changer la partie du bas lorsque le formulaire est envoyer.
+
+
+let formulaire = document.querySelector("form");
+let partieVisible = document.querySelector(".formulaire");
+let partieCacher = document.querySelector(".cacher");
+
+formulaire.addEventListener("submit", function(e){
+    e.preventDefault();
+    partieVisible.classList ="cacher";
+    partieCacher.classList ="visible";
+    alert("ça vien de changer");
+
+})
