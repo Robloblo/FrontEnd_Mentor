@@ -4,8 +4,20 @@
 }
 
 @font-face {
-    font-family: test-bold;
+    font-family: test1;
     src: url(fonts/SpaceGrotesk-Bold.ttf);
+}
+@font-face {
+    font-family: test2;
+    src: url(fonts/SpaceGrotesk-Light.ttf);
+}
+@font-face {
+    font-family: test3;
+    src: url(fonts/SpaceGrotesk-Medium.ttf);
+}
+@font-face {
+    font-family: test4;
+    src: url(fonts/SpaceGrotesk-VariableFont_wght.ttf);
 }
 
 
@@ -160,17 +172,27 @@ main{
     position: absolute;
     top:50%;
     right:0;
-    margin-right: 10%;
-    transform: translate(0,-50%);
-    max-width:30vmax;
-    height:40%;
-    
-    
+    margin-right: 15%;
+    transform: translate(0,-60%);
+    max-width:22vmax;
+    height:45%;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-   
+    
+    animation: apparition 0.7s ease-out;
 }
+@keyframes apparition {
+    from{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to{
+        opacity:1;
+        transform: translateY(-60%);
+    }
+}
+
 .formulaire form {
     height:70%;
     display: flex;
@@ -180,19 +202,25 @@ main{
 .formulaire > form  div > input{
     height: 2.4em;
     border-radius: .5em;
-    border: 1px black solid;
-    padding-left: 2%;
+    border: 2px rgba(187, 187, 187, 0.747) solid;
+    
+}
+.formulaire > form  div > input::placeholder{
+    color:rgba(187, 187, 187, 0.603);
+    padding-left: 6px;
 }
 
 
 
 
-
 .formulaire form label{
-    font-family: test-bold;
+    font-family: test3;
+    letter-spacing: 2px;
     font-weight: 500;
-    font-size: .9em;
+    font-size: .7em;
     width: 100%;
+    position: relative;
+    bottom: 4px;
 }
 
 
@@ -210,14 +238,20 @@ main{
     width:100%;
     font-size:1em;
 }
+.form-date > div:nth-child(1) > div{
+    width:35%;
+    font-size:1em;
+    margin-right: 15px;
+}
 .form-date > div input {
-    width:90%;
+    width:100%;
     font-size:1em;
 }
 .form-name > input, .form-num > input {
-    width:95%;
+    width:100%;
     height:40%;
     font-size:1em;
+    
 }
 
 .boutton-form{
@@ -237,7 +271,7 @@ button:active{
     transform: translate(0%,2%);
 }
 .formulaire input:invalid {
-    border:thin solid black;
+   
 }
 
 .message-cacher-num{
@@ -314,17 +348,21 @@ button:active{
     color: white;
     transform: translate(0%,2%);
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
     .card-front, .card-back{
     
         width:22em;
         height:100%;
     }
+    .formulaire{
+        max-width:28vmax;
+        margin-right: 10%;
+    }
 }
 @media screen and (max-width: 850px) {
     .card-front, .card-back{
     
-        width:18em;
+        width:17em;
         height:100%;
         
     }
@@ -334,7 +372,10 @@ button:active{
     .form-date > div:nth-child(1) > label{
         font-size: 80%;
     }
-    
+    .formulaire{
+        max-width:32vmax;
+        margin-right: 5%;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -384,10 +425,20 @@ button:active{
         justify-content: space-evenly;
         font-size: 90%;
     }
+    @keyframes apparition {
+        from{
+            opacity: 0;
+            transform: translate(-50%,-100%);
+        }
+        to{
+            opacity:1;
+            transform: translateY(-50%,-60%);
+        }
+    }
 
     .card-front, .card-back{
     
-        width:75vw;
+        width:70vmin;
         height:100%;
     }
     
@@ -443,7 +494,13 @@ button:active{
 
     
 }
-
+@media screen and (max-width: 550px) {
+    .card-front, .card-back{
+    
+        width:75vw;
+        height:100%;
+    }
+}
 @media screen and (max-height: 570px){
     .formulaire{
         position:none   ;
