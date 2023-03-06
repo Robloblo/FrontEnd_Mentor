@@ -1,0 +1,72 @@
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@font-face {
+    font-family: maFont;
+    src: url(Fonts/Outfit-Regular.ttf);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height: 100vh;
+    background-color: hsl(212, 45%, 89%);
+    margin: 0;
+    overflow: hidden;
+}
+main{
+    width:17em;
+    height:28em;
+    border-radius: 1em;
+    background-color: #fff;
+    padding: 1em;
+}
+
+.partie_haut{
+    width:100%;
+    border-radius: .8em;
+    
+    
+}
+.partie_haut > img{
+    width: 100%;
+    border-radius: .8em;
+}
+
+.partie_bas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width:100%;
+    
+}
+
+h1{
+    font-size: 20px;
+    width:90%;
+    margin-top:1em;
+    margin-bottom: .8em;
+    padding: 0;
+    font-family: maFont;
+    font-weight: 700;
+    color: hsl(217, 51%, 18%);
+}
+p{
+    margin: 0;
+    font-size: 15px;
+    font-family: maFont;
+    color: hsl(211, 12%, 63%);
+    width:90%;
+    font-weight: 400;
+}
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+}
